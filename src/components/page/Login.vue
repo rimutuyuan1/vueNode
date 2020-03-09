@@ -1,5 +1,5 @@
 <template>
-    <div class="login-wrap">
+    <div class="main-content">
         <div class="ms-title">乐卡用户管理系统</div>
         <div class="ms-login">
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm">
@@ -155,10 +155,10 @@
 </script>
 
 <style scoped>
-    .login-wrap{
-        position: relative;
-        width:100%;
-        height:100%;
+    .main-content{
+        background-image: url('../../../static/img/backgroud.jpg');
+        background-size: cover;
+        height: 100%;
     }
     .ms-title{
         position: absolute;
