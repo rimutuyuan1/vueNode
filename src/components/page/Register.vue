@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="main-content">
 		<div class="crumbs crumbs-register">
 			<el-breadcrumb separator="/" class="register-title">
                 <el-breadcrumb-item><i class="el-icon-setting"></i>注册</el-breadcrumb-item>
@@ -101,7 +101,7 @@
             return {
 				form: {
 					name: '',
-					account: '',					
+					account: '',
 					pass: '',
 					checkPass: '',
 					email: '',
@@ -143,7 +143,7 @@
         },
         methods:{
         	onSubmit(formName) {
-				const self = this;			
+				const self = this;
 				self.$refs[formName].validate((valid) => {
                     if (valid) {
                         self.$http.post('/api/user/addUser',self.form).then(function(response) {
@@ -157,7 +157,7 @@
                         return false;
                     }
                 });
-				
+
         	},
         	onCancle() {
         		this.$router.push('/login');
@@ -165,12 +165,17 @@
 			getDateTimes(str) {
 				var str = new Date(str);
         		return str;
-			}       	
+			}
         }
 	}
 </script>
 
 <style>
+    .main-content{
+        background-image: url('../../../static/img/backgroud.jpg');
+        background-size: cover;
+        height: 100%;
+    }
 	.crumbs-register {
 		background-color: #324157;
 		height: 50px;
@@ -181,7 +186,7 @@
 		margin: 0 auto;
     	width: 50px;
     	font-size: 16px;
-	}	
+	}
 	.userContent {
 		width: 400px;
 		margin: 0 auto;
